@@ -149,7 +149,7 @@ namespace CityInfo.API.Controllers
             // Linjen herover er egentlig ikke nødvendig med den nuværende implementation af
             // vores program, Da Enity Framework Core holder automatisk styr på vores 
             // ændringer. Men kode linjen er god at have med for en sikkerheds skyld.
-            // Metoden UpdatePointOfInterestForCity er for nærværende bare enn tom metode !!!
+            // Metoden UpdatePointOfInterestForCity er for nærværende bare en tom metode !!!
             _cityInfoRepository.Save();
                 
             return NoContent();
@@ -159,7 +159,7 @@ namespace CityInfo.API.Controllers
         public IActionResult PartiallyUpdatePointOfInterest(int cityId, int id,
             [FromBody] JsonPatchDocument<PointOfInterestForUpdateDto> patchDoc)
         {
-            // JsonPatchDocument virker på DTO og ikke på dendelige entity model !!!
+            // JsonPatchDocument virker på DTO og ikke på den endelige entity model !!!
             if (!_cityInfoRepository.CityExists(cityId))
             {
                 return NotFound();

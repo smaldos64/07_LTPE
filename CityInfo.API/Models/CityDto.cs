@@ -21,5 +21,8 @@ namespace CityInfo.API.Models
         public ICollection<PointOfInterestDto> PointsOfInterest { get; set; }
           = new List<PointOfInterestDto>();
 
+        public ICollection<CityLanguageDto> CityLanguages { get; set; }
+               = new List<CityLanguageDto>();
+
     }
 }

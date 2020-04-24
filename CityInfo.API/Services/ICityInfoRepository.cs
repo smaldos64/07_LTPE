@@ -8,6 +8,7 @@ namespace CityInfo.API.Services
 {
     public interface ICityInfoRepository
     {
+        #region From_Cities1Controller
         IEnumerable<City> GetCitiesAdvanced(bool includePointsOfInterest = false,
                                             bool includeLanguages = false);
         City GetCityAdvanced(int cityId,
@@ -16,6 +17,12 @@ namespace CityInfo.API.Services
 
         void AddCity(City city);
 
+        void UpdateCity(City city);
+
+        void DeleteCity(City city);
+        #endregion
+
+        #region From_CitiesController_And_PointOfIntererstController
         IEnumerable<City> GetCities();
         
         City GetCity(int cityId, bool includePointsOfInterest);
@@ -31,7 +38,10 @@ namespace CityInfo.API.Services
         void UpdatePointOfInterestForCity(int cityId, PointOfInterest pointOfInterest);
 
         void DeletePointOfInterest(PointOfInterest pointOfInterest);
+        #endregion
 
+        #region General
         bool Save();
+        #endregion
     }
 }
